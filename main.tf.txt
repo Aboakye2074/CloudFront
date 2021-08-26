@@ -1,0 +1,9 @@
+provider "aws" {
+    region  = "us-east-2"
+}
+data "aws_vpc" "selected" {
+    default = true
+}
+locals {
+    vpc_id    = data.aws_vpc.selected.id
+}
